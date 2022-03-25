@@ -15,8 +15,8 @@ let paths = {
   welcomeComponent: document.querySelector(".welcome"),
   campsComponents: document.querySelector(".camps"),
   aboutSectionComponents: document.querySelector(".about-section"),
+  commentsComponent: document.querySelector('.comments-form'),
 };
-
 const navigation = Array.from(document.querySelector("#navigation").children);
 const keys = Object.keys(paths);
 
@@ -32,9 +32,9 @@ navigation.forEach((element) => {
     } else if (text == "OFFERINGS") {
       show("offerts");
     } else if (text == "BLOG") {
-      show("welcomeComponent");
+      show("welcomeComponent", "commentsComponent");
     } else if(text == "HOME") {
         show('header', 'welcomeComponent')
-    }
+    } 
   });
 });
