@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
   "homepage": "https://github.com/HristoNedelkov/KidsCorners-Diploma-project#readme",
   "dependencies": {
     "firebase": "^9.6.10"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
   }
 }
