@@ -14,4 +14,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+//YOU NEED TO USE THE FIREBASE METHODS NOT WITH FETCH
+
 const app = initializeApp(firebaseConfig);
