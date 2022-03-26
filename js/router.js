@@ -15,7 +15,7 @@ let paths = {
   welcomeComponent: document.querySelector(".welcome"),
   campsComponents: document.querySelector(".camps"),
   aboutSectionComponents: document.querySelector(".about-section"),
-  commentsComponent: document.querySelector('.comments-form'),
+  commentsComponent: document.querySelector('.commentsComponent'),
 };
 const navigation = Array.from(document.querySelector("#navigation").children);
 const keys = Object.keys(paths);
