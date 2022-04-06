@@ -22,9 +22,7 @@
     "url": "https://github.com/HristoNedelkov/KidsCorners-Diploma-project/issues"
   },
   "homepage": "https://github.com/HristoNedelkov/KidsCorners-Diploma-project#readme",
-  "dependencies": {
-    "firebase": "^9.6.10"
-  },
+  "dependencies": {},
   "devDependencies": {
     "lite-server": "^2.6.1"
   }

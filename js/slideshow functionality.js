@@ -12,11 +12,7 @@ images.push("./Images/slideshow/horse2.jpg");
 
 function changeImg() {
   img.src = images[i];
-  if (i < images.length - 1) {
-    i++;
-  } else {
-    i = 0;
-  }
-  setTimeout("changeImg()", time);
+  i = i < images.length - 1 ? i + 1 : 0;
+  //setTimeout("changeImg()", time);
 }
 window.onload = changeImg;
