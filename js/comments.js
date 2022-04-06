@@ -1,12 +1,19 @@
-import uploadComment from "./db-connection.js";
+import { uploadComment, getAllComments } from "./db-connection.js";
 const btn = document.querySelector("#btn-input");
 const comments = document.querySelector(".comments");
-
-function postComment(name, message) {
- uploadComment(name, message);
+(async () => {
+  const allComments = await getAllComments();
+  const res = await Object.values(allComments.val());
+  console.log(res);
+  for (const el of Array.from(res)) {
+    const { author, comment, email } = el;
+    postComment(author, comment, email);
+  }
+})();
+function postComment(name, message, email) {
   const div = `
   <div class="commentsBox">
-            <h2>Comment By <span>${name}</span> </h2>
+            <h2>Comment By <span>${name} (${email})</span> </h2>
             <p>${message}</p>
         </div>
   `;
@@ -22,7 +29,9 @@ btn.addEventListener("click", (e) => {
     document.querySelector("#message-input"),
     document.querySelector("#email-input"),
   ];
-  postComment(inputs[0].value, inputs[1].value);
+  let [name, message, email] = inputs.map((e) => e.value);
+  postComment(name, message, email);
+  uploadComment(name, message, email);
   inputs.forEach((e) => {
     e.value = "";
   });

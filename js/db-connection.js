@@ -24,22 +24,23 @@ const app = initializeApp(firebaseConfig);
 
 const dbRef = getDatabase();
 
-export default function uploadComment(author, comment) {
-  const commentsRef = ref(dbRef, "comments");
+const commentsRef = ref(dbRef, "comments");
+export function uploadComment(author, comment, email) {
   const newPostRef = push(commentsRef);
   set(newPostRef, {
     author,
     comment,
+    email,
   })
     .then((res) => {
       alert("Comment posted successfully");
       console.log(author + " said " + comment);
     })
     .catch((e) => {
-      alert("unseccessful, errror: " + e);
+      console.log("unseccessful, errror: " + e);
     });
-  // set(ref(dbRef, "/comments/"), {
-  //   author,
-  //   comment,
-  // })
+}
+
+export function getAllComments() {
+  return get(ref(dbRef, "comments"));
 }
