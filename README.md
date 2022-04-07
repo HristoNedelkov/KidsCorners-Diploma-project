@@ -9,4 +9,4 @@ type:
 # npm run dev
 
 
-Host link:  https://hristonedelkov.github.io/KidsCorners-Diploma-project/
+Host link: stefani-project.xyz 
