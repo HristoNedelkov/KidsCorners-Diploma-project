@@ -13,6 +13,6 @@ images.push("./Images/slideshow/horse2.jpg");
 function changeImg() {
   img.src = images[i];
   i = i < images.length - 1 ? i + 1 : 0;
-  //setTimeout("changeImg()", time);
+  setTimeout("changeImg()", time);
 }
 window.onload = changeImg;
