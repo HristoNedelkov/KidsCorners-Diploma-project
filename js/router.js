@@ -1,3 +1,7 @@
+function trimUrl(path) {
+  window.history.replaceState({}, "", "/" + path);
+  return;
+}
 function show(...componentsToBeShown) {
   for (const key in paths) {
     if (componentsToBeShown.includes(key)) {
@@ -26,15 +30,19 @@ navigation.forEach((element) => {
 
     if (text == "ABOUT US") {
       show("aboutSectionComponents");
-      window.history.pushState("about-us");
+      trimUrl("about-us");
     } else if (text == "CAMPS") {
       show("campsComponents");
+      trimUrl("camps");
     } else if (text == "OFFERINGS") {
       show("offerts");
+      trimUrl("offerts");
     } else if (text == "BLOG") {
       show("welcomeComponent", "commentsComponent");
+      trimUrl("blog");
     } else if (text == "HOME") {
       show("header", "welcomeComponent");
+      trimUrl("home");
     }
   });
 });
