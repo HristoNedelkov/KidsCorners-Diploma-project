@@ -8,5 +8,4 @@ type:
 # npm install
 # npm run dev
 
-
-Host link: stefani-project.xyz 
+https://stefani-project.xyz/
