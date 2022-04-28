@@ -32,11 +32,12 @@ export function uploadComment(author, comment, email) {
     comment,
     email,
   })
-    .then((res) => {
+    .then(() => {
       alert("Comment posted successfully");
       console.log(author + " said " + comment);
     })
     .catch((e) => {
+      alert("try again!");
       console.log("unseccessful, errror: " + e);
     });
 }
